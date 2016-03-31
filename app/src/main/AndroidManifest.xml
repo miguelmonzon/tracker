@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="mx.com.efectosoftware.tracker1"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="8" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <!-- Aquí le digo que inicie con login.java y en login.java mando -->
+        <!-- llamar al layout activity_main.xml que contiene el formulario -->
+        <!-- para loggearse en la aplicación -->            
+        <activity
+            android:name="mx.com.efectosoftware.tracker1.Login"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="mx.com.efectosoftware.tracker1.MenuPrincipal"
+            android:screenOrientation="portrait" >
+        </activity>
+        <service android:enabled="true"
+            	android:name="mx.com.efectosoftware.tracker1.GPSTracker"/>
+        
+        <receiver android:name="mx.com.efectosoftware.tracker1.Receiver">
+            	<intent-filter>
+                	<action    android:name="android.intent.action.BOOT_COMPLETED" />
+                	<category android:name="android.intent.category.HOME" />
+            	</intent-filter>
+        </receiver>
+        
+        <service android:enabled="true"
+            	android:name="mx.com.efectosoftware.tracker1.EnviandoGeolocalizaciones"/>
+        
+        <receiver android:name="mx.com.efectosoftware.tracker1.Receiver2">
+            	<intent-filter>
+                	<action    android:name="android.intent.action.BOOT_COMPLETED" />
+                	<category android:name="android.intent.category.HOME" />
+            	</intent-filter>
+        </receiver>
+        
+    </application>
+
+</manifest>

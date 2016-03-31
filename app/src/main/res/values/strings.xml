@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tracker version 1.1</string>
+    <string name="version">versión 1.1</string>
+    <string name="login_btn">Ingresar</string>
+    <string name="salir">Salir</string>
+    <string name="cero">0</string>
+    <string name="proyectosAsignados">Grupos por Geolocalizar</string>
+    <string name="SeleccioneUno">Seleccione uno</string>
+    <string name="Regresar">Regresar</string>
+    <string name="estatusInternet">Estatus Internet</string>
+    <string name="imei">Identificador</string>
+    <string name="linkEmpresa">http://www.efectosoftware.com.mx</string>
+    
+
+</resources>
